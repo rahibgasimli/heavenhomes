@@ -19,14 +19,14 @@ export default function HomePage() {
       <Services />
       <Testimonials />
       <Facts />
-      {/* <Benefits />
-      <LatestListings />
-      <Showcase />
-      <Offices />
+      <Benefits />
+      {/* <LatestListings /> */}
+      {/* <Showcase /> */}
+      {/* <Offices /> */}
       <Categories />
-      <Team />
-      <Partners />
-      <Newsletter /> */}
+      {/* <Team /> */}
+      {/* <Partners /> */}
+      <Newsletter />
     </Layout>
   );
 }

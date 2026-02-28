@@ -16,7 +16,7 @@ export default function AboutPage() {
       <Mission />
       <Values />
       <Leadership />
-      <Offices />
+      {/* <Offices /> */}
       <Facts />
       <Gallery />
       <Newsletter />
