@@ -167,11 +167,7 @@ export default function Hero() {
 
         {/* Project Grid */}
         <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
-            gap: "1.75rem",
-          }}
+          className={styles.listings}
         >
           {gefilterte.map((projekt) => (
             <div

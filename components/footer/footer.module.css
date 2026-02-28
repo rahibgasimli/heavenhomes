@@ -1,10 +1,10 @@
 .section {
-    background-color: var(--orange-700);
+    background-color: var(--green-800);
 }
 
 .container {
     display: grid;
-    gap: 80px;
+    gap: 40px;
 }
 
 .content {
@@ -23,7 +23,7 @@
 }
 
 .divider {
-    background-color: var(--orange-600);
+    background-color: var(--yellow-400);
     height: 1px;
     width: 100%;
 }

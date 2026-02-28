@@ -36,34 +36,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      <section className={cn("section", styles.section)}>
-        <div className={cn("container", styles.container)}>
-          <div className={styles.content}>
-            <Heading type="heading-3">
-              Zuverlässige Handwerkskunst auf Meisterniveau – in Herborn und der gesamten Region Hessen.
-            </Heading>
-
-            <div className={styles.stack}>
-              <div className={styles.card}>
-                <div className={cn("paragraph-large", styles.card_subtitle)}>
-                  Abgeschlossene Projekte
-                </div>
-                <div className={cn("heading-3")}>500+</div>
-              </div>
-
-              <div className={styles.card}>
-                <Image
-                  src="/images/intro.webp"
-                  alt="MR Bauunternehmen Projekt"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

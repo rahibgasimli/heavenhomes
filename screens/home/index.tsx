@@ -16,17 +16,17 @@ export default function HomePage() {
   return (
     <Layout>
       <Hero />
+      <Services />
+      <Testimonials />
+      <Facts />
+      {/* <Benefits />
       <LatestListings />
-      <Benefits />
       <Showcase />
       <Offices />
       <Categories />
-      <Facts />
       <Team />
-      <Services />
       <Partners />
-      <Testimonials />
-      <Newsletter />
+      <Newsletter /> */}
     </Layout>
   );
 }

@@ -62,10 +62,10 @@ html.lenis body {
     justify-content: center;
     background: linear-gradient(
         90deg,
-        var(--orange-600) 0%,
-        var(--orange-500) 100%
+        var(--green-800) 0%,
+        var(--green-700) 100%
     );
-    box-shadow: 0 14px 20px rgba(234, 88, 12, 0.2);
+    box-shadow: 0 14px 20px rgba(1, 103, 35, 0.234);
 }
 
 .gradient-bubble {

@@ -4,7 +4,6 @@
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 2fr;
     align-items: start;
     gap: 48px;
 }
@@ -43,14 +42,14 @@
 
 .listings {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 24px;
     grid-row-gap: 48px;
 }
 
 @media (max-width: 1024px) {
     .listings {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

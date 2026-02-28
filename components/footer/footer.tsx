@@ -52,7 +52,7 @@ export default function Footer() {
           <Logo />
 
           <div>
-            <Heading type="heading-3" className={styles.title}>
+            <Heading type="heading-5" className={styles.title}>
               Qualität, die bleibt – Ihr Meisterbetrieb in Herborn.
             </Heading>
             <div className={cn("subheading-small", styles.email)}>
