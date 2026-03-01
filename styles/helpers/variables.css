@@ -3,6 +3,9 @@
   --black: #000000;
   --background: #050606;
 
+  --main-color-1: #17381f;
+  --main-color-2: #f9d361;
+  
   --gray-50: #f5f7f8;
   --gray-100: #edf0f2;
   --gray-200: #dde3e8;
@@ -23,7 +26,6 @@
   --green-500: #2d8a40;
   --green-600: #236e32;
   --green-700: #1c5828;
-  --green-800: #17381f;
   --green-900: #102a16;
   --green-950: #0a1c0f;
 
@@ -31,7 +33,6 @@
   --yellow-100: #fdf7d0;
   --yellow-200: #fceea1;
   --yellow-300: #fbe272;
-  --yellow-400: #f9d361;
   --yellow-500: #f7c832;
   --yellow-600: #e0ad1a;
   --yellow-700: #b88a12;

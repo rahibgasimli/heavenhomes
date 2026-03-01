@@ -1,5 +1,5 @@
 .section {
-    background-color: var(--green-800);
+    background-color: var(--main-color-1);
 }
 
 .container {
@@ -23,7 +23,7 @@
 }
 
 .divider {
-    background-color: var(--yellow-400);
+    background-color: var(--main-color-2);
     height: 1px;
     width: 100%;
 }

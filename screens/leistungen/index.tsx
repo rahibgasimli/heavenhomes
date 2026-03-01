@@ -157,7 +157,7 @@ export default function LeistungenPage() {
             {/* Page Hero */}
             <section className={cn("section")} style={{ background: "linear-gradient(135deg, #1a1a1a 60%, #2d2d2d)", color: "#fff", paddingTop: "6rem", paddingBottom: "4rem" }}>
                 <div className={cn("container")}>
-                    <div className={cn("subheading-small")} style={{ color: "#E67A00" }}>UNSERE LEISTUNGEN</div>
+                    <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>UNSERE LEISTUNGEN</div>
                     <div style={{ color: "#fff", marginTop: "0.5rem" }}><Heading type="heading-3">
                         Professioneller Bau &amp; Sanierung –<br />Ihr Meisterbetrieb in Herborn, Hessen
                     </Heading></div>
@@ -166,7 +166,7 @@ export default function LeistungenPage() {
                     </p>
                     <div style={{ display: "flex", gap: "1rem", marginTop: "2rem" }}>
                         <Link href="/contact" className="button">Angebot anfordern</Link>
-                        <Link href="/listings" className="button-stroke" style={{ color: "#fff", borderColor: "#fff" }}>Projekte ansehen</Link>
+                        <Link href="/listings" className="button-stroke">Projekte ansehen</Link>
                     </div>
                 </div>
             </section>
@@ -175,7 +175,7 @@ export default function LeistungenPage() {
             {leistungen.map((l, i) => (
                 <section key={l.id} className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8" }}>
                     <div className={cn("container")}>
-                        <div className={cn("subheading-small")} style={{ color: "#E67A00" }}>LEISTUNG 0{l.id}</div>
+                        <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>LEISTUNG 0{l.id}</div>
                         <div style={{ marginTop: "0.5rem" }}><Heading type="heading-3">{l.title}</Heading></div>
 
                         <p className={cn("paragraph-large")} style={{ marginTop: "1rem", maxWidth: "700px" }}>
@@ -185,7 +185,7 @@ export default function LeistungenPage() {
                         <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                             {l.items.map((item, idx) => (
                                 <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                                    <span style={{ color: "#E67A00", fontWeight: 700 }}>✓</span> {item}
+                                    <span style={{ color: "var(--main-color-1)", fontWeight: 700 }}>✓</span> {item}
                                 </li>
                             ))}
                         </ul>
@@ -194,7 +194,7 @@ export default function LeistungenPage() {
                         <div style={{ marginTop: "2rem" }}>
                             <div className={cn("subheading-small")} style={{ marginBottom: "1rem" }}>HÄUFIGE FRAGEN</div>
                             {l.faq.map((item, idx) => (
-                                <div key={idx} style={{ marginBottom: "1rem", padding: "1rem", background: "#f0f0f0", borderRadius: "8px", borderLeft: "4px solid #E67A00" }}>
+                                <div key={idx} style={{ marginBottom: "1rem", padding: "1rem", background: "#f0f0f0", borderRadius: "8px", borderLeft: "4px solid var(--main-color-2)" }}>
                                     <div className={cn("paragraph-medium")} style={{ fontWeight: 700 }}>{item.q}</div>
                                     <div className={cn("paragraph-medium")} style={{ marginTop: "0.25rem", color: "#555" }}>{item.a}</div>
                                 </div>
@@ -205,15 +205,15 @@ export default function LeistungenPage() {
             ))}
 
             {/* CTA Section */}
-            <section className={cn("section")} style={{ background: "#E67A00", color: "#fff" }}>
+            <section className={cn("section")} style={{ background: "var(--main-color-2)", color: "#fff" }}>
                 <div className={cn("container")} style={{ textAlign: "center" }}>
-                    <div style={{ color: "#fff" }}><Heading type="heading-3">
+                    <div style={{ color: "var(--black)" }}><Heading type="heading-3">
                         Bereit für Ihr Bauprojekt?
                     </Heading></div>
-                    <p className={cn("paragraph-large")} style={{ color: "rgba(255,255,255,0.85)", marginTop: "0.75rem", marginBottom: "2rem" }}>
+                    <p className={cn("paragraph-large")} style={{ color: "var(--black)", marginTop: "0.75rem", marginBottom: "2rem" }}>
                         Kontaktieren Sie uns jetzt für ein kostenloses und unverbindliches Angebot. Als Meisterbetrieb in Herborn stehen wir für Qualität und Verlässlichkeit.
                     </p>
-                    <Link href="/contact" style={{ background: "#fff", color: "#E67A00", padding: "0.875rem 2rem", borderRadius: "4px", fontWeight: 700, textDecoration: "none", display: "inline-block" }}>
+                    <Link href="/contact" className="button" style={{ padding: "0.875rem 2rem", fontWeight: 700, textDecoration: "none", display: "inline-block" }}>
                         Jetzt Angebot anfordern
                     </Link>
                 </div>

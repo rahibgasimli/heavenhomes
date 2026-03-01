@@ -107,6 +107,7 @@ export default function Header() {
               (isBlackHeader && !(mobile && visibleNav)) || sticky,
             [styles.sticky_logo]: sticky,
           })}
+          src={isBlackHeader ? "/images/logo2.png" : "/images/logo1.png"}
         />
 
         <motion.nav

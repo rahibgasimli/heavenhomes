@@ -104,7 +104,7 @@ const projekte = [
 const kategorien: Kategorie[] = ["Alle", "Hochbau", "Sanierung", "Gartenbau", "Tiefbau", "Fassade"];
 
 const kategorieColors: Record<string, string> = {
-  Hochbau: "#E67A00",
+  Hochbau: "var(--main-color-1)",
   Sanierung: "#2a7fc4",
   Gartenbau: "#3a9f5c",
   Tiefbau: "#8b5e3c",
@@ -122,7 +122,7 @@ export default function Hero() {
 
         {/* Page Header */}
         <div style={{ marginBottom: "2.5rem" }}>
-          <div className={cn("subheading-small")} style={{ color: "#E67A00" }}>
+          <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>
             REFERENZPROJEKTE
           </div>
           <h1 className={cn("heading-3")} style={{ marginTop: "0.4rem", marginBottom: "1rem" }}>
@@ -152,8 +152,8 @@ export default function Hero() {
                 padding: "0.5rem 1.25rem",
                 borderRadius: "100px",
                 border: "1.5px solid",
-                borderColor: aktiv === k ? "#E67A00" : "#ddd",
-                background: aktiv === k ? "#E67A00" : "#fff",
+                borderColor: aktiv === k ? "var(--main-color-1)" : "#ddd",
+                background: aktiv === k ? "var(--main-color-1)" : "#fff",
                 color: aktiv === k ? "#fff" : "#555",
                 cursor: "pointer",
                 transition: "all 0.2s ease",
@@ -281,9 +281,8 @@ export default function Hero() {
           </div>
           <Link
             href="/contact"
+            className="button"
             style={{
-              background: "#E67A00",
-              color: "#fff",
               padding: "0.875rem 2rem",
               borderRadius: "6px",
               fontWeight: 700,
