@@ -9,8 +9,8 @@
     padding: 0 24px;
     background: linear-gradient(
         90deg,
-        var(--orange-600) 0%,
-        var(--orange-500) 100%
+        var(--main-color-1) 0%,
+        var(--green-700) 100%
     );
     font-weight: 600;
     font-size: 16px;
@@ -20,7 +20,7 @@
     border-radius: 16px;
     color: var(--white);
     transition: all 0.2s;
-    border: 1.5px solid var(--orange-600);
+    border: 1.5px solid var(--main-color-1);
     transition: all 0.2s;
     gap: 8px;
     cursor: pointer;
@@ -30,8 +30,8 @@
 [class^="button"]:hover {
     background: linear-gradient(
         90deg,
-        var(--orange-500) 0%,
-        var(--orange-600) 100%
+        var(--green-700) 0%,
+        var(--main-color-1) 100%
     );
 }
 
@@ -90,13 +90,13 @@
 }
 
 .button-stroke-small svg {
-    stroke: var(--orange-600);
+    stroke: var(--main-color-1);
 }
 
 .button-stroke-small:hover,
 .button-stroke-small:active {
-    background: var(--orange-600);
-    box-shadow: 0 0 0 2px var(--orange-600) inset;
+    background: var(--main-color-1);
+    box-shadow: 0 0 0 2px var(--main-color-1) inset;
     color: var(--white);
 }
 

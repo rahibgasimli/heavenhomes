@@ -62,7 +62,7 @@ html.lenis body {
     justify-content: center;
     background: linear-gradient(
         90deg,
-        var(--green-800) 0%,
+        var(--main-color-1) 0%,
         var(--green-700) 100%
     );
     box-shadow: 0 14px 20px rgba(1, 103, 35, 0.234);
