@@ -11,10 +11,10 @@ import { usePathname } from "next/navigation";
 
 const nav_links = [
   { title: "Start", href: "/" },
-  { title: "Leistungen", href: "/leistungen" },
-  { title: "Projekte", href: "/listings" },
-  { title: "Über uns", href: "/about" },
-  { title: "Kontakt", href: "/contact" },
+  { title: "Leistungen", href: "/leistungenn" },
+  { title: "Projekte", href: "/listingss" },
+  { title: "Über uns", href: "/aboutt" },
+  { title: "Kontakt", href: "/contactt" },
 ];
 
 const blackHeaderPages = [
@@ -137,7 +137,7 @@ export default function Header() {
 
         <div className={styles.button_wrapper}>
           <Link
-            href="/contact"
+            href="/contactt"
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_button]: sticky,

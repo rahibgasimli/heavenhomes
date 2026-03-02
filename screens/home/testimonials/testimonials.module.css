@@ -7,6 +7,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 80px;
+    align-items: center;
 }
 
 .testimonial_image {
@@ -26,6 +27,8 @@
 .testimonial_name {
     color: var(--slate-500);
     margin-top: 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .testimonial_name span {
