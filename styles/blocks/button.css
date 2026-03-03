@@ -204,3 +204,10 @@
     width: 40px;
     height: 40px;
 }
+
+@media(max-width: 768px){
+    [class^="button"] {
+        font-size: 16px;
+            padding: 0 16px;
+    }
+}

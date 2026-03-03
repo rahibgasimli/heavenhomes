@@ -35,57 +35,37 @@ const Plus = (
 );
 
 const Building = (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M13.8129 17.9357C13.8066 19.0019 12.9381 19.8605 11.872 19.8543H5.14279C4.07755 19.8596 3.209 19 3.20361 17.934V13.0685C3.20811 12.6499 3.40661 12.2574 3.74072 12.0051L7.39902 9.0689C8.0448 8.55874 8.95646 8.55874 9.60137 9.0689L13.2758 12.0024C13.6082 12.2547 13.8057 12.6463 13.8129 13.0631V17.9357Z"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M8.50684 16.3594V19.635"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M16.6482 19.7553H17.8464C18.9358 19.7553 19.8188 18.8724 19.8188 17.7829V6.11913C19.8188 5.02963 18.9358 4.14673 17.8464 4.14673H13.0249C11.9418 4.14673 11.0642 5.02425 11.0642 6.10745V6.91851"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M16.8345 15.9302V15.9402"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M16.8345 12.0425V12.0325"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M14.0103 8.13452V8.14452"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <path
-      d="M16.8345 8.13452V8.14452"
-      stroke-width="1.38462"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg>
 );
+
+const TreePine = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-tree-pine-icon lucide-tree-pine"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+)
+
+const HardHat = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-hat-icon lucide-hard-hat">
+    <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"/>
+    <path d="M14 6a6 6 0 0 1 6 6v3"/>
+    <path d="M4 15v-3a6 6 0 0 1 6-6"/>
+    <rect x="2" y="15" width="20" height="4" rx="1"/>
+  </svg>
+)
+
+const Hammer = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hammer-icon lucide-hammer">
+    <path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"/>
+    <path d="m18 15 4-4"/>
+    <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/>
+  </svg>
+)
+
+const Snowflake =(
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-snowflake-icon lucide-snowflake"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></svg>
+)
+
+const PaintRoller = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-paint-roller-icon lucide-paint-roller"><rect width="16" height="6" x="2" y="2" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect width="4" height="6" x="8" y="16" rx="1"/></svg>
+)
 
 const Filter = (
   <svg
@@ -1028,8 +1008,14 @@ const Location = (
   </svg>
 );
 
+
 export {
   Building,
+  HardHat,
+  Hammer,
+  TreePine,
+  PaintRoller,
+  Snowflake,
   Filter,
   ChevronDown,
   DoubleBed,

@@ -26,7 +26,7 @@ export default function Hero() {
             für Bau & Sanierung.
           </HeroTitle>
 
-          <div style={{ display: "flex", gap: "1rem" }}>
+          <div className={styles.hero_buttons}>
             <Link href="/contact" className="button">
               Angebot anfragen
             </Link>
