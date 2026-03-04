@@ -115,8 +115,6 @@ const ReviewSection = () => {
                         <div className="swiper-button-prev review-nav-prev" style={{
                             position: "absolute",
                             left: "-20px",
-                            top: "50%",
-                            transform: "translateY(-50%)",
                             width: "40px",
                             height: "40px",
                             backgroundColor: "#fff",
@@ -136,8 +134,6 @@ const ReviewSection = () => {
                         <div className="swiper-button-next review-nav-next" style={{
                             position: "absolute",
                             right: "-20px",
-                            top: "50%",
-                            transform: "translateY(-50%)",
                             width: "40px",
                             height: "40px",
                             backgroundColor: "#fff",
