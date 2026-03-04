@@ -4,7 +4,8 @@ import cn from "classnames";
 import Logo from "../logo";
 import { Heading } from "../typography";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Youtube } from "@/constants/icons";
+import { Facebook, Instagram, Tiktok, Youtube } from "@/constants/icons";
+import Image from "next/image";
 
 const links = [
   { id: 1, title: "Start", url: "/" },
@@ -22,25 +23,25 @@ const socials = [
     id: 1,
     icon: Instagram,
     title: "Instagram",
-    url: "#",
+    url: "https://www.instagram.com/mr_bauunternehmen?igsh=MWh4dHpqenR5aXd4ZA%3D%3D&utm_source=qr",
   },
   {
     id: 2,
     icon: Facebook,
     title: "Facebook",
-    url: "#",
+    url: "https://www.facebook.com/profile.php?id=61588340791183&mibextid=wwXIfr&rdid=9yNSvk4Y2aJkNYgm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AxJp85APt%2F%3Fmibextid%3DwwXIfr#",
   },
   {
     id: 3,
-    icon: Linkedin,
-    title: "Linkedin",
-    url: "#",
+    icon: Tiktok,
+    title: "Tiktok",
+    url: "https://www.tiktok.com/@mr.bauunternehmen?_r=1&_t=ZG-948s4XVgtNp",
   },
   {
     id: 4,
     icon: Youtube,
     title: "Youtube",
-    url: "#",
+    url: "https://www.youtube.com/@MRBauunternehmen",
   },
 ];
 
@@ -63,18 +64,18 @@ export default function Footer() {
 
         <div className={styles.divider} />
 
-        <div className={styles.content}>
+        <div className={styles.footer_bottom}>
           <div className={styles.business_info}>
             <div>
               <div className={cn("paragraph-small", styles.address)}>
                 Herborn, Lahn-Dill-Kreis, Hessen
               </div>
               <div className={cn("paragraph-small", styles.phone)}>
-                +49 (0) 2772 123456
+                +49 160 182 91 92
               </div>
             </div>
 
-            <div className={styles.socials}>
+            <div className={styles.socials} style={{ alignItems: "center" }}>
               {socials.map((social) => (
                 <a
                   key={social.id}
@@ -104,6 +105,14 @@ export default function Footer() {
               </Link>
             ))}
           </div>
+
+          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+            <Link target="blank" href="https://www.my-hammer.de/auftragnehmer/mammadov-ruslan"><Image src="/images/handwerker.png" alt="HandWerker" width={80} height={80} /></Link>
+            <Link target="blank" href="https://www.handwerker.de/firmen/mr-bauunternehmen-gmbh-100000000000001698"><Image src="/images/profi.svg" alt="Profi" width={80} height={80} /></Link>
+            {/* <Link target="blank"></Link> */}
+          </div>
+            
+          
         </div>
       </div>
     </footer>

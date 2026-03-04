@@ -125,7 +125,7 @@ export default function Hero() {
           <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>
             REFERENZPROJEKTE
           </div>
-          <h1 className={cn("heading-3")} style={{ marginTop: "0.4rem", marginBottom: "1rem" }}>
+          <h1 className={cn("heading-4")} style={{ marginTop: "0.4rem", marginBottom: "1rem" }}>
             Unsere abgeschlossenen Bauprojekte
           </h1>
           <p className={cn("paragraph-large")} style={{ color: "#555", maxWidth: "680px" }}>

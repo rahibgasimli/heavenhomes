@@ -8,6 +8,7 @@ import Burger from "../burger";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Facebook, Instagram, Tiktok, Youtube } from "@/constants/icons";
 
 const nav_links = [
   { title: "Start", href: "/" },
@@ -23,6 +24,33 @@ const blackHeaderPages = [
   "/contact",
   "/property-detail",
   "/agent",
+];
+
+const socials = [
+  {
+    id: 1,
+    icon: Instagram,
+    title: "Instagram",
+    url: "https://www.instagram.com/mr_bauunternehmen?igsh=MWh4dHpqenR5aXd4ZA%3D%3D&utm_source=qr",
+  },
+  {
+    id: 2,
+    icon: Facebook,
+    title: "Facebook",
+    url: "https://www.facebook.com/profile.php?id=61588340791183&mibextid=wwXIfr&rdid=9yNSvk4Y2aJkNYgm&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1AxJp85APt%2F%3Fmibextid%3DwwXIfr#",
+  },
+  {
+    id: 3,
+    icon: Tiktok,
+    title: "Tiktok",
+    url: "https://www.tiktok.com/@mr.bauunternehmen?_r=1&_t=ZG-948s4XVgtNp",
+  },
+  {
+    id: 4,
+    icon: Youtube,
+    title: "Youtube",
+    url: "https://www.youtube.com/@MRBauunternehmen",
+  },
 ];
 
 export default function Header() {
@@ -58,8 +86,7 @@ export default function Header() {
   }, []);
 
   const navVariants = {
-    hidden: { clipPath: "inset(0% 0% 100% 0%)" },
-    visible: {
+    open: {
       clipPath: "inset(0% 0% 0% 0%)",
       transition: {
         type: "spring",
@@ -69,6 +96,7 @@ export default function Header() {
         delay: 0.2,
       },
     },
+    closed: { clipPath: "inset(0% 0% 100% 0%)" },
   };
 
   const handleScrollSection = (
@@ -114,8 +142,8 @@ export default function Header() {
           className={cn(styles.nav, {
             [styles.visible]: visibleNav,
           })}
-          initial={mobile ? "hidden" : false}
-          animate={mobile && visibleNav ? "visible" : "hidden"}
+          initial={mobile ? "closed" : false}
+          animate={mobile && visibleNav ? "open" : "closed"}
           variants={mobile ? navVariants : {}}
         >
           <div className={styles.nav_links}>
@@ -133,6 +161,32 @@ export default function Header() {
               </Link>
             ))}
           </div>
+
+          {/* Sadece mobilde görünen Sosyal Medya İkonları */}
+          {mobile && (
+            <div className={styles.socials} style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "24px",
+              marginTop: "40px"
+            }}>
+              {socials.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.social}
+                  style={{ color: "var(--primary)" }} // Mobil menyuda görünməsi üçün rəng - ehtiyac varsa dəyişin
+                >
+                  <div style={{ width: "24px", height: "24px" }}>
+                    {social.icon}
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
         </motion.nav>
 
         <div className={styles.button_wrapper}>

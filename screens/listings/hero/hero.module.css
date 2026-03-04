@@ -63,11 +63,23 @@
     }
 }
 
+@media (max-width: 640px) {
+    .listings {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .filters {
         padding: 24px;
     }
+
     .listings {
+        display: grid;
         grid-template-columns: 1fr;
+        gap: 32px;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
     }
 }

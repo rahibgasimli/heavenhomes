@@ -1,8 +1,20 @@
+"use client"
+
 import React from "react";
 import Layout from "@/components/Layout";
 import cn from "classnames";
 import { Heading } from "@/components/typography";
 import Link from "next/link";
+
+// Swiper importları
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Pagination } from 'swiper/modules';
+
+// Swiper stilləri (Əgər globals.css-də yoxdursa, mütləq bura əlavə edilməlidir)
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 const leistungen = [
     {
@@ -173,33 +185,65 @@ export default function LeistungenPage() {
 
             {/* Service Sections */}
             {leistungen.map((l, i) => (
-                <section key={l.id} className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8" }}>
-                    <div className={cn("container")}>
-                        <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>LEISTUNG 0{l.id}</div>
-                        <div style={{ marginTop: "0.5rem" }}><Heading type="heading-3">{l.title}</Heading></div>
+                <section key={l.id} className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8", padding: "80px 0" }}>
+                    <div className={cn("container")} style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "60px",
+                        flexWrap: "wrap",
+                        flexDirection: i % 2 === 0 ? "row" : "row-reverse"
+                    }}>
 
-                        <p className={cn("paragraph-large")} style={{ marginTop: "1rem", maxWidth: "700px" }}>
-                            {l.description}
-                        </p>
+                        {/* Mətn Bloqu */}
+                        <div style={{ flex: "1.0", minWidth: "320px" }}>
+                            <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>LEISTUNG 0{l.id}</div>
+                            <div style={{ marginTop: "0.5rem" }}>
+                                <Heading type="heading-4">{l.title}</Heading>
+                            </div>
 
-                        <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                            {l.items.map((item, idx) => (
-                                <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                                    <span style={{ color: "var(--main-color-1)", fontWeight: 700 }}>✓</span> {item}
-                                </li>
-                            ))}
-                        </ul>
+                            <p className={cn("paragraph-medium")} style={{ marginTop: "1rem" }}>
+                                {l.description}
+                            </p>
 
-                        {/* FAQ */}
-                        <div style={{ marginTop: "2rem" }}>
-                            <div className={cn("subheading-small")} style={{ marginBottom: "1rem" }}>HÄUFIGE FRAGEN</div>
-                            {l.faq.map((item, idx) => (
-                                <div key={idx} style={{ marginBottom: "1rem", padding: "1rem", background: "#f0f0f0", borderRadius: "8px", borderLeft: "4px solid var(--main-color-2)" }}>
-                                    <div className={cn("paragraph-medium")} style={{ fontWeight: 700 }}>{item.q}</div>
-                                    <div className={cn("paragraph-medium")} style={{ marginTop: "0.25rem", color: "#555" }}>{item.a}</div>
-                                </div>
-                            ))}
+                            <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.8rem", listStyle: "none", padding: 0 }}>
+                                {l.items.map((item, idx) => (
+                                    <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                                        <span style={{ color: "var(--main-color-1)", fontWeight: 700, marginTop: "2px" }}>✓</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
+
+                        {/* Slider Bloqu */}
+                        <div style={{ flex: "1", minWidth: "320px", width: "100%" }}>
+                            <Swiper
+                                modules={[EffectFade, Pagination]}
+                                effect="fade"
+
+                                pagination={{ clickable: true }}
+                                style={{
+                                    borderRadius: "20px",
+                                    overflow: "hidden",
+                                    height: "400px",
+                                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                                }}
+                            >
+                                <SwiperSlide>
+                                    <img
+                                        src="https://swiperjs.com/demos/images/nature-1.jpg"
+                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                    />
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <img
+                                        src="https://swiperjs.com/demos/images/nature-2.jpg"
+                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                    />
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+
                     </div>
                 </section>
             ))}
