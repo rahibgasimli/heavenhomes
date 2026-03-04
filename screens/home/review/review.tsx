@@ -86,7 +86,7 @@ const ReviewSection = () => {
                 <div style={{
                     display: "flex",
                     gap: "40px",
-                    alignItems: "flex-start",
+                    alignItems: "center",
                     flexWrap: "wrap",
                     justifyContent: "center"
                 }}>
