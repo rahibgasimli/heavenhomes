@@ -178,7 +178,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.social}
-                  style={{ color: "var(--primary)" }} // Mobil menyuda görünməsi üçün rəng - ehtiyac varsa dəyişin
+                  style={{ color: "var(--main-color-1)" }} // Mobil menyuda görünməsi üçün rəng - ehtiyac varsa dəyişin
                 >
                   <div style={{ width: "24px", height: "24px" }}>
                     {social.icon}

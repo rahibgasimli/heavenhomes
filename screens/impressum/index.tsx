@@ -1,14 +1,13 @@
 import Layout from "@/components/Layout"
 import cn from "classnames";
+import Hero from "./hero";
+import Content from "./content";
 
 const ImpressumPage = () => {
   return (
     <Layout>
-        <section className={cn("section")}>
-              <div className={cn("container")}>
-                <h1>Impressum</h1>
-              </div>
-        </section>
+      <Hero />
+      <Content />
     </Layout>
   )
 }

@@ -49,11 +49,11 @@ export default function Footer() {
   return (
     <footer className={cn("section", styles.section)}>
       <div className={cn("container", styles.container)}>
-        <div className={styles.content}>
+        <div className={styles.content} style={{ alignItems: "center" }}>
           <Logo />
 
           <div>
-            <Heading type="heading-5" className={styles.title}>
+            <Heading type="heading-6" className={styles.title}>
               Qualität, die bleibt – Ihr Meisterbetrieb in Herborn.
             </Heading>
             <div className={cn("subheading-small", styles.email)}>
@@ -106,13 +106,15 @@ export default function Footer() {
             ))}
           </div>
 
-          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}>
             <Link target="blank" href="https://www.my-hammer.de/auftragnehmer/mammadov-ruslan"><Image src="/images/handwerker.png" alt="HandWerker" width={80} height={80} /></Link>
             <Link target="blank" href="https://www.handwerker.de/firmen/mr-bauunternehmen-gmbh-100000000000001698"><Image src="/images/profi.svg" alt="Profi" width={80} height={80} /></Link>
-            {/* <Link target="blank"></Link> */}
           </div>
-            
-          
+
+          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+            <Link href="/impressum" className={cn("label-medium", styles.link)} style={{ textDecoration: "underline" }}>Impressum</Link>
+            <Link href="/datenschutz" className={cn("label-medium", styles.link)} style={{ textDecoration: "underline" }}>Datenschutzerklärung</Link>
+          </div>
         </div>
       </div>
     </footer>

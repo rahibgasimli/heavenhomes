@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.text {
+    color: var(--slate-500);
+    line-height: 1.6;
+}
+
+.list {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: var(--primary-dark, #000);
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 32px;
+    }
+}

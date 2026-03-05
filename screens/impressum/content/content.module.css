@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.title {
+    text-transform: uppercase;
+}
+
+.text {
+    color: var(--slate-500);
+    line-height: 1.6;
+}
+
+.link {
+    color: var(--primary);
+    /* assuming --primary is the yellow color */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: var(--primary-dark, #000);
+    /* generic hover */
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 32px;
+    }
+}

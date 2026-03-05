@@ -8,12 +8,11 @@ import Link from "next/link";
 
 // Swiper importları
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Pagination } from 'swiper/modules';
+import { EffectFade } from 'swiper/modules';
 
 // Swiper stilləri (Əgər globals.css-də yoxdursa, mütləq bura əlavə edilməlidir)
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 const leistungen = [
@@ -163,6 +162,69 @@ const leistungen = [
     },
 ];
 
+const LeistungSection = ({ l, i }: { l: any; i: number }) => {
+    const [activeIndex, setActiveIndex] = React.useState(0);
+
+    return (
+        <section className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8", padding: "80px 0" }}>
+            <div className={cn("container")} style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "60px",
+                flexWrap: "wrap",
+            }}>
+
+                {/* Mətn Bloqu */}
+                <div style={{ flex: "1.0", minWidth: "320px" }}>
+                    <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>LEISTUNG 0{l.id}</div>
+                    <div style={{ marginTop: "0.5rem" }}>
+                        <Heading type="heading-4">{l.title}</Heading>
+                    </div>
+
+                    <p className={cn("paragraph-medium")} style={{ marginTop: "1rem" }}>
+                        {l.description}
+                    </p>
+
+                    <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.8rem", listStyle: "none", padding: 0 }}>
+                        {l.items.map((item: string, idx: number) => (
+                            <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", transition: "all 0.3s ease" }}>
+                                <span style={{ color: activeIndex === idx ? "var(--main-color-2, #eab308)" : "var(--main-color-1)", fontWeight: 700, marginTop: "2px", transition: "color 0.3s ease" }}>✓</span>
+                                <span style={{ transition: "color 0.3s ease", color: activeIndex === idx ? "var(--black, #000)" : "inherit" }}>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Slider Bloqu */}
+                <div style={{ flex: "1", minWidth: "320px", width: "100%" }}>
+                    <Swiper
+                        modules={[EffectFade]}
+                        effect="fade"
+                        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                        style={{
+                            borderRadius: "20px",
+                            overflow: "hidden",
+                            height: "400px",
+                            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                        }}
+                    >
+                        {l.items.map((_: any, idx: number) => (
+                            <SwiperSlide key={idx}>
+                                <img
+                                    src={`https://swiperjs.com/demos/images/nature-${(idx % 4) + 1}.jpg`}
+                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                    alt={`Slide ${idx + 1}`}
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
+
+            </div>
+        </section>
+    );
+};
+
 export default function LeistungenPage() {
     return (
         <Layout>
@@ -185,67 +247,7 @@ export default function LeistungenPage() {
 
             {/* Service Sections */}
             {leistungen.map((l, i) => (
-                <section key={l.id} className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8", padding: "80px 0" }}>
-                    <div className={cn("container")} style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "60px",
-                        flexWrap: "wrap",
-                        flexDirection: i % 2 === 0 ? "row" : "row-reverse"
-                    }}>
-
-                        {/* Mətn Bloqu */}
-                        <div style={{ flex: "1.0", minWidth: "320px" }}>
-                            <div className={cn("subheading-small")} style={{ color: "var(--main-color-2)" }}>LEISTUNG 0{l.id}</div>
-                            <div style={{ marginTop: "0.5rem" }}>
-                                <Heading type="heading-4">{l.title}</Heading>
-                            </div>
-
-                            <p className={cn("paragraph-medium")} style={{ marginTop: "1rem" }}>
-                                {l.description}
-                            </p>
-
-                            <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.8rem", listStyle: "none", padding: 0 }}>
-                                {l.items.map((item, idx) => (
-                                    <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
-                                        <span style={{ color: "var(--main-color-1)", fontWeight: 700, marginTop: "2px" }}>✓</span>
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* Slider Bloqu */}
-                        <div style={{ flex: "1", minWidth: "320px", width: "100%" }}>
-                            <Swiper
-                                modules={[EffectFade, Pagination]}
-                                effect="fade"
-
-                                pagination={{ clickable: true }}
-                                style={{
-                                    borderRadius: "20px",
-                                    overflow: "hidden",
-                                    height: "400px",
-                                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
-                                }}
-                            >
-                                <SwiperSlide>
-                                    <img
-                                        src="https://swiperjs.com/demos/images/nature-1.jpg"
-                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                                    />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img
-                                        src="https://swiperjs.com/demos/images/nature-2.jpg"
-                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                                    />
-                                </SwiperSlide>
-                            </Swiper>
-                        </div>
-
-                    </div>
-                </section>
+                <LeistungSection key={l.id} l={l} i={i} />
             ))}
 
             {/* CTA Section */}
