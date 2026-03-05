@@ -108,7 +108,7 @@ export default function Footer() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}>
             <Link target="blank" href="https://www.my-hammer.de/auftragnehmer/mammadov-ruslan"><Image src="/images/handwerker.png" alt="HandWerker" width={80} height={80} /></Link>
-            <Link target="blank" href="https://www.handwerker.de/firmen/mr-bauunternehmen-gmbh-100000000000001698"><Image src="/images/profi.svg" alt="Profi" width={80} height={80} /></Link>
+            <Link target="blank" href="https://handwerk.check24.de/craftsmen/cs/profile/sp_mgQQZ"><Image src="/images/profi.svg" alt="Profi" width={80} height={80} /></Link>
           </div>
 
           <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
