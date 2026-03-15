@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
 import styles from "./curtain.module.css";
+
+type DivMotionProps = React.HTMLAttributes<HTMLDivElement> & MotionProps;
+const MotionDiv = motion.div as React.FC<DivMotionProps>;
 
 export default function Curtain() {
   const variants = {
@@ -21,14 +24,14 @@ export default function Curtain() {
   };
 
   return (
-    <motion.div
+    <MotionDiv
       className={styles.curtain}
       initial="hidden"
       animate="visible"
       variants={variants}
       style={{ originY: 0 }}
     >
-      <motion.div className={styles.title}>SaytPro™</motion.div>
-    </motion.div>
+      <MotionDiv className={styles.title}>SaytPro™</MotionDiv>
+    </MotionDiv>
   );
 }

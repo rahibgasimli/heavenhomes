@@ -111,9 +111,10 @@ export default function Footer() {
             <Link target="blank" href="https://handwerk.check24.de/craftsmen/cs/profile/sp_mgQQZ"><Image src="/images/profi.svg" alt="Profi" width={80} height={80} /></Link>
           </div>
 
-          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+          <div style={{ display: "flex", gap: "16px", alignItems: "center", flexWrap: "wrap" }}>
             <Link href="/impressum" className={cn("label-medium", styles.link)} style={{ textDecoration: "underline" }}>Impressum</Link>
             <Link href="/datenschutz" className={cn("label-medium", styles.link)} style={{ textDecoration: "underline" }}>Datenschutzerklärung</Link>
+            <Link href="/cookie-richtlinie" className={cn("label-medium", styles.link)} style={{ textDecoration: "underline" }}>Cookie-Richtlinie</Link>
           </div>
         </div>
       </div>

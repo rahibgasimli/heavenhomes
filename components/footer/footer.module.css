@@ -1,10 +1,11 @@
 .section {
     background-color: var(--main-color-1);
+    padding: 48px 0 !important;
 }
 
 .container {
     display: grid;
-    gap: 40px;
+    gap: 24px;
 }
 
 .content {
@@ -24,7 +25,7 @@
 }
 
 .email {
-    margin-top: 24px;
+    margin-top: 12px;
     text-transform: uppercase;
     color: var(--white);
 }
@@ -72,8 +73,11 @@
 }
 
 @media (max-width: 1024px) {
+    .section {
+        padding: 40px 0 !important;
+    }
     .container {
-        gap: 64px;
+        gap: 20px;
     }
     .footer_bottom {
         grid-template-columns: repeat(2, 1fr);
@@ -81,8 +85,11 @@
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 36px 0 !important;
+    }
     .container {
-        gap: 48px;
+        gap: 20px;
     }
 }
 

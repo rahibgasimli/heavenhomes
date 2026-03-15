@@ -3,6 +3,7 @@ import "../styles/index.css";
 import cn from "classnames";
 import localFont from "next/font/local";
 import { Providers } from "./providers";
+import CookieBanner from "@/components/cookie-banner/cookie-banner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -41,7 +42,9 @@ export default function RootLayout({ children }: LayoutProps) {
         )}
       >
         <Providers>{children}</Providers>
+        <CookieBanner />
       </body>
     </html>
   );
 }
+

@@ -5,7 +5,6 @@ import styles from "./testimonials.module.css";
 import cn from "classnames";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "@/constants/icons";
-import { motion } from "framer-motion";
 
 const testimonials = [
   {

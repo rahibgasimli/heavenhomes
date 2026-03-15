@@ -5,7 +5,10 @@ import cn from "classnames";
 import styles from "./header.module.css";
 import Logo from "../logo";
 import Burger from "../burger";
-import { motion } from "framer-motion";
+import { motion, type MotionProps } from "framer-motion";
+
+type NavMotionProps = React.HTMLAttributes<HTMLElement> & MotionProps;
+const MotionNav = motion.nav as React.FC<NavMotionProps>;
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Facebook, Instagram, Tiktok, Youtube } from "@/constants/icons";
@@ -138,7 +141,7 @@ export default function Header() {
           src={isBlackHeader ? "/images/logo2.png" : "/images/logo1.png"}
         />
 
-        <motion.nav
+        <MotionNav
           className={cn(styles.nav, {
             [styles.visible]: visibleNav,
           })}
@@ -187,7 +190,7 @@ export default function Header() {
               ))}
             </div>
           )}
-        </motion.nav>
+        </MotionNav>
 
         <div className={styles.button_wrapper}>
           <Link
