@@ -1,33 +1,33 @@
 import React from "react";
 import styles from "./values.module.css";
 import cn from "classnames";
-import { Bag } from "@/constants/icons";
+import { Award, Users, HandShake, Recycle } from "@/constants/icons";
 
 const values = [
   {
     id: 1,
-    icon: Bag,
+    icon: Award,
     title: "Meisterqualität",
     description:
       "Jedes Projekt wird nach den strengen Maßstäben des deutschen Handwerks ausgeführt. Als Meisterbetrieb garantieren wir nachhaltige Qualität, die jahrzehntelang hält.",
   },
   {
     id: 2,
-    icon: Bag,
+    icon: HandShake,
     title: "Verlässlichkeit",
     description:
       "Wir halten unsere Versprechen: vereinbarte Termine, transparente Preise, sorgfältige Ausführung. Unsere Kunden wissen, dass sie sich auf uns verlassen können.",
   },
   {
     id: 3,
-    icon: Bag,
+    icon: Recycle,
     title: "Nachhaltigkeit",
     description:
       "Wir arbeiten nach aktuellen Energiestandards (GEG 2024) und setzen auf langlebige Materialien und umweltbewusste Bauweisen für eine bessere Zukunft.",
   },
   {
     id: 4,
-    icon: Bag,
+    icon: Users,
     title: "Kundennähe",
     description:
       "Jedes Kundenprojekt ist einzigartig. Wir hören zu, beraten persönlich und begleiten Sie von der ersten Anfrage bis zur fertigen Abnahme – persönlich und engagiert.",

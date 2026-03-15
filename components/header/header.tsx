@@ -194,7 +194,7 @@ export default function Header() {
 
         <div className={styles.button_wrapper}>
           <Link
-            href="/contact"
+            href="mailto:info@mr-bauunternehmen.de"
             className={cn("button-stroke-small", styles.button, {
               [styles.black_button]: isBlackHeader && !(mobile && visibleNav),
               [styles.sticky_button]: sticky,

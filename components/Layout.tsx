@@ -4,6 +4,7 @@ import React from "react";
 import Curtain from "./curtain";
 import Footer from "./footer";
 import Header from "./header";
+import WhatsAppButton from "./whatsapp-button";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ export default function Layout({ children }: LayoutProps) {
       <Header />
       {children}
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

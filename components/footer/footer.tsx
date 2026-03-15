@@ -7,15 +7,20 @@ import Link from "next/link";
 import { Facebook, Instagram, Tiktok, Youtube } from "@/constants/icons";
 import Image from "next/image";
 
-const links = [
+const leftLinks = [
   { id: 1, title: "Start", url: "/" },
   { id: 2, title: "Leistungen", url: "/leistungen" },
   { id: 3, title: "Projekte", url: "/listings" },
   { id: 4, title: "Über uns", url: "/about" },
   { id: 5, title: "Kontakt", url: "/contact" },
-  { id: 6, title: "Hochbau", url: "/leistungen" },
-  { id: 7, title: "Sanierung", url: "/leistungen" },
-  { id: 8, title: "Gartenbau", url: "/leistungen" },
+];
+
+const rightLinks = [
+  { id: 6, title: "Hochbau", url: "/leistungen#hochbau" },
+  { id: 7, title: "Tiefbau", url: "/leistungen#tiefbau" },
+  { id: 8, title: "Sanierung", url: "/leistungen#sanierung" },
+  { id: 9, title: "Gartenbau", url: "/leistungen#gartenbau" },
+  { id: 10, title: "Fassade", url: "/leistungen#fassade" },
 ];
 
 const socials = [
@@ -95,15 +100,28 @@ export default function Footer() {
           </div>
 
           <div className={styles.links}>
-            {links.map((link) => (
-              <Link
-                key={link.id}
-                href={link.url}
-                className={cn("label-medium", styles.link)}
-              >
-                {link.title}
-              </Link>
-            ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {leftLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.url}
+                  className={cn("label-medium", styles.link)}
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {rightLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.url}
+                  className={cn("label-medium", styles.link)}
+                >
+                  {link.title}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center" }}>

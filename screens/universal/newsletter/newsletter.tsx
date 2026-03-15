@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./newsletter.module.css";
 import cn from "classnames";
-import { Bag, Notification } from "@/constants/icons";
+import { Calculator, Notification } from "@/constants/icons";
 import { TextField } from "@/components/elements";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ export default function Newsletter() {
         <div className={cn("subheading-small", styles.title)}>Kontakt & Angebot</div>
         <div className={styles.columns}>
           <div className={styles.column}>
-            <div className={cn("gradient-bubble")}>{Bag}</div>
+            <div className={cn("gradient-bubble")}>{Calculator}</div>
 
             <div>
               <div className={cn("heading-6", styles.text)}>

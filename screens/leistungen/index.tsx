@@ -19,15 +19,16 @@ const leistungen = [
     {
         id: 1,
         slug: "hochbau",
-        title: "Hochbau in Herborn & Lahn-Dill-Kreis",
+        title: "Hoch- und Tiefbau",
         description:
-            "Als Meisterbetrieb übernehmen wir den gesamten Hochbau – von der Planung bis zur Schlüsselübergabe. Ob Einfamilienhaus, Mehrfamilienhaus oder Gewerbegebäude: Wir bauen solide, termingerecht und transparent.",
+            "Stabile Grundlagen für jedes Bauvorhaben – vom Fundament bis zum kompletten Rohbau.",
         items: [
-            "Neubau von Wohn- und Gewerbegebäuden",
             "Fundament- und Mauerarbeiten",
-            "Beton- und Stahlbetonarbeiten",
-            "Rohbau und Ausbau",
-            "Dachkonstruktionen und Abschlussarbeiten",
+            "Beton- und Tragwerksbau",
+            "Erd- & Tiefbauarbeiten",
+            "Leitungs- & Kanalbau",
+            "Neubau & Rohbau",
+            "Erweiterung & Ausbau von Gebäuden"
         ],
         faq: [
             {
@@ -162,16 +163,31 @@ const leistungen = [
     },
 ];
 
+const serviceImages = [
+    "/images/services/foundation-work.jpg",
+    "/images/services/beton.jpg",
+    "/images/services/tractor.jpg",
+    "/images/services/borular.jpg",
+    "/images/services/fasad.jpg",
+    "/images/services/netice.jpg",
+];
+
 const LeistungSection = ({ l, i }: { l: any; i: number }) => {
     const [activeIndex, setActiveIndex] = React.useState(0);
+    const swiperRef = React.useRef<any>(null);
 
     return (
-        <section className={cn("section")} style={{ background: i % 2 === 0 ? "#fff" : "#f8f8f8", padding: "80px 0" }}>
+        <section id={l.slug} className={cn("section")} style={{ 
+            background: i % 2 === 0 ? "#fff" : "#f8f8f8", 
+            padding: "80px 0"
+        }}>
             <div className={cn("container")} style={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center", // Məzmunu təmiz ortalayır
                 gap: "60px",
                 flexWrap: "wrap",
+                flexDirection: i % 2 === 0 ? "row" : "row-reverse",
             }}>
 
                 {/* Mətn Bloqu */}
@@ -185,11 +201,28 @@ const LeistungSection = ({ l, i }: { l: any; i: number }) => {
                         {l.description}
                     </p>
 
-                    <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", gap: "0.8rem", listStyle: "none", padding: 0 }}>
+                    <ul style={{ marginTop: "1.5rem", display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "0.5rem", listStyle: "none", padding: 0 }}>
                         {l.items.map((item: string, idx: number) => (
-                            <li key={idx} className={cn("paragraph-medium")} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", transition: "all 0.3s ease" }}>
-                                <span style={{ color: activeIndex === idx ? "var(--main-color-2, #eab308)" : "var(--main-color-1)", fontWeight: 700, marginTop: "2px", transition: "color 0.3s ease" }}>✓</span>
-                                <span style={{ transition: "color 0.3s ease", color: activeIndex === idx ? "var(--black, #000)" : "inherit" }}>{item}</span>
+                            <li key={idx} className={cn("paragraph-medium")} 
+                            onClick={() => {
+                                setActiveIndex(idx);
+                                if (swiperRef.current) {
+                                    swiperRef.current.slideTo(idx);
+                                }
+                            }}
+                            style={{ 
+                                display: "flex", 
+                                alignItems: "flex-start", 
+                                gap: "0.75rem", 
+                                transition: "all 0.3s ease",
+                                padding: "10px 16px",
+                                borderRadius: "8px",
+                                backgroundColor: activeIndex === idx ? "rgba(234, 179, 8, 0.1)" : "transparent",
+                                width: "fit-content",
+                                cursor: "pointer"
+                            }}>
+                                <span style={{ color: activeIndex === idx ? "var(--main-color-2, #eab308)" : "var(--main-color-1)", fontWeight: 700, marginTop: "2px", transition: "color 0.3s ease", fontSize: "1.25rem" }}>✓</span>
+                                <span style={{ transition: "all 0.3s ease", color: activeIndex === idx ? "var(--black, #000)" : "inherit", fontWeight: activeIndex === idx ? 600 : 400, marginTop: "1px" }}>{item}</span>
                             </li>
                         ))}
                     </ul>
@@ -200,23 +233,31 @@ const LeistungSection = ({ l, i }: { l: any; i: number }) => {
                     <Swiper
                         modules={[EffectFade]}
                         effect="fade"
+                        onSwiper={(swiper) => {
+                            swiperRef.current = swiper;
+                        }}
                         onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                         style={{
                             borderRadius: "20px",
                             overflow: "hidden",
-                            height: "400px",
+                            height: "450px",
                             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
                         }}
                     >
-                        {l.items.map((_: any, idx: number) => (
-                            <SwiperSlide key={idx}>
-                                <img
-                                    src={`https://swiperjs.com/demos/images/nature-${(idx % 4) + 1}.jpg`}
-                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                                    alt={`Slide ${idx + 1}`}
-                                />
-                            </SwiperSlide>
-                        ))}
+                        {l.items.map((_: any, idx: number) => {
+                            // Hər bölmə üçün fərqli şəkillər və rotasiya
+                            const imagePath = serviceImages[(idx + i) % serviceImages.length];
+
+                            return (
+                                <SwiperSlide key={idx}>
+                                    <img
+                                        src={imagePath}
+                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                        alt={`${l.title} - Slide ${idx + 1}`}
+                                    />
+                                </SwiperSlide>
+                            );
+                        })}
                     </Swiper>
                 </div>
 
@@ -226,6 +267,26 @@ const LeistungSection = ({ l, i }: { l: any; i: number }) => {
 };
 
 export default function LeistungenPage() {
+    React.useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const element = document.querySelector(hash);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 50);
+                }
+            }
+        };
+
+        // Component açılanda işə salınması (əgər URL-də hash varsa)
+        handleHashChange();
+        
+        // Link dəyişəndə aktivləşməsi
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
     return (
         <Layout>
             {/* Page Hero */}

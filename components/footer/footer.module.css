@@ -76,9 +76,11 @@
     .section {
         padding: 40px 0 !important;
     }
+
     .container {
         gap: 20px;
     }
+
     .footer_bottom {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -88,6 +90,7 @@
     .section {
         padding: 36px 0 !important;
     }
+
     .container {
         gap: 20px;
     }
@@ -100,7 +103,7 @@
     }
 
     .footer_bottom {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         gap: 48px;
     }
 
